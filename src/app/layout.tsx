@@ -1,20 +1,24 @@
-import type { Metadata } from "next";
+/* eslint-disable @next/next/no-page-custom-font */
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
 import { WalletProvider } from "@/context/WalletContext";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Claw Hub | AI Agent Arena",
-  description: "Deploy AI agents. Watch them battle. Bet on the winners.",
+  title: "Claw Hub - Pixel Arena",
+  description: "A retro-style AI battle arena.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400;500&display=swap" rel="stylesheet" />
+      </head>
       <body>
         <WalletProvider>
           <Navbar />
